@@ -60,6 +60,7 @@ console.log(data);
 
 // Задание 2
 // Создать класс Car, который наследует от Transport. Этот класс должен содержать метод getDoorsCount(), который возвращает количество дверей:
+
 const objects = document.querySelector(".objects");
 
 class Car extends Transport {
@@ -80,6 +81,7 @@ class Car extends Transport {
 
 // Задание 3
 // Создать класс Bike, который наследует от Transport. Этот класс должен содержать метод getMaxSpeed(), который возвращает максимальную скорость мотоцикла:
+
 const objects_2 = document.querySelector(".objects_2");
 
 class Bike extends Transport {
@@ -123,3 +125,21 @@ function getMaxSpeed(arr) {
     }
 }
 getMaxSpeed(data);
+
+
+// Full list / 
+
+function render(arr) {
+    const filterList = document.querySelector('.list');
+    for (let obj of arr) {
+        const li = document.createElement('li');
+        if (obj.doors) {
+            li.textContent = `${obj.id}. ${obj.type}, ${obj.brand}, has ${obj.doors} doors.`
+        } else {
+            li.textContent = `${obj.id}. ${obj.type}, ${obj.brand}, has speed ${obj.maxSpeed}.`
+        }
+        // <img src="${obj.image}" alt=""></img> 
+        filterList.append(li);
+    }
+} 
+render(data);
